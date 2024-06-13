@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="profile-section">
+    <h2>Personal Information</h2>
+    <p><strong>First Name:</strong> {{ selectedProfile.firstName }}</p>
+    <p><strong>Designation:</strong> {{ selectedProfile.designation }}</p>
+    <p><strong>Email:</strong> {{ selectedProfile.email }}</p>
+    <p><strong>Contact Number:</strong> {{ selectedProfile.contactNumber }}</p>
+    <p><strong>Description:</strong> {{ selectedProfile.description }}</p>
+    <p><strong>Skills:</strong> {{ selectedProfile.skills }}</p>
+  </div>
+
+  <div class="profile-section">
+    <h2>Education</h2>
+    <div>
+      <h3>Secondary Education</h3>
+      <p><strong>Degree Name:</strong> {{ selectedProfile.degree1 }}</p>
+      <p><strong>Institution:</strong> {{ selectedProfile.institution1 }}</p>
+      <p><strong>Passing Year:</strong> {{ selectedProfile.passingYear1 | date : 'yyyy' }}</p>
+    </div>
+    <div>
+      <h3>Higher Education</h3>
+      <p><strong>Degree Name:</strong> {{ selectedProfile.degree2 }}</p>
+      <p><strong>Institution:</strong> {{ selectedProfile.institution2 }}</p>
+      <p><strong>Passing Year:</strong> {{ selectedProfile.passingYear2 }}</p>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2>Work Experience</h2>
+    <div>
+      <h3>Work Experience 1</h3>
+      <p><strong>Job Title:</strong> {{ selectedProfile.jobTitle1 }}</p>
+      <p><strong>Year:</strong> {{ selectedProfile.jobQuitYear1 }}</p>
+      <p><strong>Description:</strong> {{ selectedProfile.jobDescription1 }}</p>
+    </div>
+    <div>
+      <h3>Work Experience 2</h3>
+      <p><strong>Job Title:</strong> {{ selectedProfile.jobTitle2 }}</p>
+      <p><strong>Year:</strong> {{ selectedProfile.jobQuitYear2 }}</p>
+      <p><strong>Description:</strong> {{ selectedProfile.jobDescription2 }}</p>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <h2>References</h2>
+    <div>
+      <h3>Reference 1</h3>
+      <p><strong>Referrer Name:</strong> {{ selectedProfile.referrerName1 }}</p>
+      <p><strong>Referrer Email:</strong> {{ selectedProfile.referrerEmail1 }}</p>
+      <p><strong>Referrer Contact:</strong> {{ selectedProfile.referrerNo1 }}</p>
+    </div>
+    <div>
+      <h3>Reference 2</h3>
+      <p><strong>Referrer Name:</strong> {{ selectedProfile.referrerName2 }}</p>
+      <p><strong>Referrer Email:</strong> {{ selectedProfile.referrerEmail2 }}</p>
+      <p><strong>Referrer Contact:</strong> {{ selectedProfile.referrerNo2 }}</p>
+    </div>
+  </div>
+</div>

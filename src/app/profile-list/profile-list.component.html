@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h1 class="profile-list-heading">Profile List</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let profile of profileDetail; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ profile.firstName }}</td>
+        <td>{{profile.designation}}</td>
+        <td>
+          <button class="btn btn-info btn-md" (click)="viewProfile(profile)">View</button>
+          <button class="btn btn-warning btn-md" (click)="updateProfile(profile)">Update</button>
+          <button class="btn btn-success btn-md" (click)="generateCV(profile)">Generate CV</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,171 @@
+<div class="container mt-5">
+  <h4>{{ profile ? 'Update Your Profile' : 'Create Your Profile' }} Here</h4>
+  <div class="form-area">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Full Name  -->
+      <div class="form-group">
+        <input class="form-control"
+               placeholder="First Name"
+               type="text"
+               formControlName="firstName"
+               required>
+        <div class="alert alert-danger" *ngIf="form.get('firstName')?.touched && form.get('firstName')?.invalid">
+          <div *ngIf="form.get('firstName')?.errors?.['required']">Name is required</div>
+          <div *ngIf="form.get('firstName')?.errors?.['minlength']">At least 5 characters</div>
+          <div *ngIf="form.get('firstName')?.errors?.['maxlength']">At most 20 characters</div>
+        </div>
+      </div>
+      <!-- Designation -->
+      <div class="form-group">
+        <input class="form-control"
+               placeholder="Designation"
+               type="text"
+               formControlName="designation"
+               required>
+        <div class="alert alert-danger" *ngIf="form.get('designation')?.touched && form.get('designation')?.invalid">
+          <div *ngIf="form.get('designation')?.errors?.['required']">Designation is required</div>
+          <div *ngIf="form.get('designation')?.errors?.['maxlength']">Designation is too long</div>
+        </div>
+      </div>
+      <!-- Email -->
+      <div class="form-group">
+        <input class="form-control"
+               placeholder="Email"
+               type="email"
+               formControlName="email"
+               required>
+        <div class="alert alert-danger" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">
+          <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+          <div *ngIf="form.get('email')?.errors?.['pattern']">Email is not valid</div>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div class="form-group">
+        <input class="form-control"
+               placeholder="Contact Number"
+               type="text"
+               formControlName="contactNumber"
+               required>
+
+        <div class="alert alert-danger"
+             *ngIf="form.get('contactNumber')?.touched && form.get('contactNumber')?.invalid">
+          <div *ngIf="form.get('contactNumber')?.errors?.['required']">Contact number is required</div>
+          <div *ngIf="form.get('contactNumber')?.errors?.['pattern']">Contact number must be 10 digits</div>
+        </div>
+      </div>
+      <!-- Description -->
+      <div class="form-group">
+            <textarea class="form-control"
+                      placeholder="Describe Yourself"
+                      cols="15"
+                      rows="2"
+                      formControlName="description"
+                      required></textarea>
+      </div>
+
+      <!-- Skill Section -->
+      <div class="form-group">
+        <textarea class="form-control" placeholder="Skills" cols="15" rows="2" formControlName="skills"
+                  required></textarea>
+      </div>
+
+      <!-- Secondary Education -->
+      <div class="row">
+        <!-- Education Section 1 -->
+        <div class="col-md-6">
+          <h6>Secondary Education</h6>
+          <div class="form-group">
+            <input class="form-control" placeholder="Degree Name" type="text" formControlName="degree1" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Institution" type="text" formControlName="institution1" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Passing Year" type="text" formControlName="passingYear1" required>
+          </div>
+        </div>
+        <!-- Education Section 2 -->
+        <div class="col-md-6">
+          <h6>Higher Education</h6>
+          <div class="form-group">
+            <input class="form-control" placeholder="Degree Name" type="text" formControlName="degree2" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Institution" type="text" formControlName="institution2" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Passing Year" type="text" formControlName="passingYear2" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Experience Section 1 -->
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Work Experience 1</h6>
+          <div class="form-group">
+            <input class="form-control" placeholder="Job Title" type="text" formControlName="jobTitle1" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Year" type="text" formControlName="jobQuitYear1" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Description" rows="2" formControlName="jobDescription1"
+                      required></textarea>
+          </div>
+        </div>
+        <!-- Work Experience Section 2 -->
+        <div class="col-md-6">
+          <h6>Work Experience 2</h6>
+          <div class="form-group">
+            <input class="form-control" placeholder="Job Title" type="text" formControlName="jobTitle2" required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Year" type="text" formControlName="jobQuitYear2" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Description" rows="2" formControlName="jobDescription2"
+                      required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reference Section 1 -->
+      <div class="row">
+        <div class="col-md-6">
+          <h6>Reference 1</h6>
+          <div class="form-group">
+            <input class="form-control" placeholder="Referrer Name" type="text" formControlName="referrerName1"
+                   required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Referrer Email" type="email" formControlName="referrerEmail1"
+                   required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Referrer Contact" type="text" formControlName="referrerNo1"
+                   required>
+          </div>
+        </div>
+        <!-- Reference Section 2 -->
+        <div class="col-md-6">
+          <h6>Reference 2</h6>
+          <div class="form-group">
+            <input class="form-control" placeholder="Referrer Name" type="text" formControlName="referrerName2"
+                   required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Referrer Email" type="email" formControlName="referrerEmail2"
+                   required>
+          </div>
+          <div class="form-group">
+            <input class="form-control" placeholder="Referrer Contact" type="text" formControlName="referrerNo2"
+                   required>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">{{ profile ? 'Update' : 'Submit' }}</button>
+    </form>
+  </div>
+</div>

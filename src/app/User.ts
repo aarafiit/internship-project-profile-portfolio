@@ -1,0 +1,28 @@
+export interface User{
+    id ?: number ,
+    firstName : string,
+    designation ?: string,
+    email ?: string,
+    contactNumber ?: string,
+    degree1 ?: string,
+    degree2 ?: string,
+    passingYear1 ?: number,
+    passingYear2 ?: number,
+    institution1 ?: string,
+    institution2 ?: string,
+    skills ?: string,
+    jobTitle1 ?: string,
+    jobTitle2 ?: string,
+    jobQuitYear1 ?: number,
+    jobQuitYear2 ?: number,
+    description ?: string,
+    jobDescription1 ?: string,
+    jobDescription2 ?: string,
+    referrerName1 ?: string,
+    referrerName2 ?: string,
+    referrerEmail1 ?: string,
+    referrerEmail2 ?: string,
+    referrerNo1 ?: string,
+    referrerNo2 ?: string
+    
+}
